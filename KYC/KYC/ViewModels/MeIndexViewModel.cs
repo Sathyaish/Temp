@@ -1,17 +1,13 @@
 ﻿using KYC.Contracts;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 
 namespace KYC.ViewModels
 {
-    public class IndexViewModel
+    public class MeIndexViewModel : ViewModelBase
     {
-        public bool IsPostback { get; set; }
-        public string Url { get; set; }
+        public ViewModes ViewMode { get; set; }
 
-        public bool Failed { get; set; }
-        public string ErrorMessage { get; set; }
+        public Channel Channel { get; set; }
 
         public IEnumerable<Subscription> Subscriptions { get; set; }
 
@@ -25,14 +21,6 @@ namespace KYC.ViewModels
             list.Add(subscription);
 
             return subscription;
-        }
-
-        public int SubscriptionCount
-        {
-            get
-            {
-                return Subscriptions.Count();
-            }
         }
     }
 }

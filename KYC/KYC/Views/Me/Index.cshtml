@@ -1,0 +1,14 @@
+﻿@model KYC.ViewModels.MeIndexViewModel
+
+<link href="@Url.Content("~/Content/Index.css")" rel="stylesheet" />
+
+<div>
+    @if (Model.Failed)
+    {
+        @Html.Partial("__PageSpecificErrorSection", Model)
+    }
+    else
+    {
+        @Html.Partial("__MyChannelSection", Model)
+    }
+</div>

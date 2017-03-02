@@ -1,33 +1,15 @@
-﻿@model KYC.ViewModels.IndexViewModel
+﻿@model KYC.ViewModels.HomeIndexViewModel
+
+<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/HomeIndex.css")" rel="stylesheet" />
 
 <div>
     @if (!Model.IsPostback)
     {
-        <a id="lnkGet" href="@Model.Url">Get stuff</a>
+        @Html.Partial("__GetMyStuffSection", Model)
     }
     else if (Model.Failed)
     {
-        <div id="errorMessage" style="color: red"></div>
-    }
-    else
-    {
-        if (Model.Subscriptions != null && Model.SubscriptionCount > 0)
-        {
-            <div id="results">
-                
-                <div style="padding-top: 10px; padding-bottom: 20px;">@Model.SubscriptionCount subscriptions</div>
-
-                <ol id="subscriptions">
-                    @foreach (var subscription in Model.Subscriptions)
-                    {
-                        <li title="@subscription.Description" style="margin-bottom: 7px;">
-                            <a href="@string.Format("https://www.youtube.com/channel/{0}", subscription.ChannelId)">
-                                @subscription.Title
-                            </a>
-                        </li>
-                    }
-                </ol>
-            </div>
-        }
+        @Html.Partial("__PageSpecificErrorSection", Model)
     }
 </div>

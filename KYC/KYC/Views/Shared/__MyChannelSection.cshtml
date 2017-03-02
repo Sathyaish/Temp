@@ -1,0 +1,38 @@
+﻿@model KYC.ViewModels.MeIndexViewModel
+
+<div id = "divMyChannelContainer">
+    
+    <div id="divChannelPictureContainer">
+        <img id="imgChannelPicture" src="@Model.Channel.HighResolutionThumbnailUrl"/>
+    </div>
+
+    <div id="divChannelUserFullNameContainer">
+        <a id="linkChannelUserFullName" href="@string.Format("https://www.youtube.com/channel/{0}", Model.Channel.Id)">@Model.Channel.Title</a>
+    </div>
+
+    <div id="divMemberSinceContainer">
+        <div id="divMemberSince">Member since: @Model.Channel.MemberSince.ToLongDateString()</div>
+    </div>
+
+    <div id="divChannelStatisticsContainer">
+        <div id="divViewcountContainer">
+            <div id="divViewCount">@Model.Channel.ViewCount views</div>
+        </div>
+
+        <div id="divUploadCountContainer">
+            @Html.ActionLink(Model.Channel.VideoCount.ToString() + " uploads", "Uploads", "Me", null, new { id = "lnkUploadCount" })
+        </div>
+
+        <div id="divSubscriptionCountContainer">
+            @Html.ActionLink(Model.Channel.SubscriptionCount.ToString() + " subscriptions", "Subscriptions", "Me", null, new { id = "lnkSubscriptionCount" })
+        </div>
+
+        <div id="divSubscriberCountContainer">
+            @Html.ActionLink(Model.Channel.SubscriberCount.ToString() + " subscribers", "Subscribers", "Me", null, new { id = "lnkSubscriberCount" })
+        </div>
+    </div>
+
+    <div id="divChannelDescriptionContainer">
+        <div id="divChannelDescription">@Model.Channel.Description</div>
+    </div>
+</div>

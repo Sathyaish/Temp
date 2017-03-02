@@ -1,13 +1,13 @@
-﻿body {
+﻿/*body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
+}*/
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -21,4 +21,33 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+/* Custom */
+#divGetMyStuffContainer {
+    width: 80%;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 250px;
+
+    border-color:#605757;
+    border-style: solid;
+    border-width: 4px;
+
+    text-align: center;
+}
+
+#linkGetMyStuff {
+    display: inline-block;
+    text-align: center;
+    margin-top: 50%;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+
+    border: 4px solid red;
 }

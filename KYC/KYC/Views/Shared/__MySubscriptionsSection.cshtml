@@ -1,0 +1,22 @@
+﻿@model KYC.ViewModels.MeIndexViewModel
+
+@if (Model.Subscriptions != null && Model.Subscriptions.Count() > 0)
+{
+    <div id="divSubscriptionsContainer">
+
+        <div id="divSubscriptionsHeaderLabel">@(Model.Subscriptions.Count().ToString()) Subscriptions</div>
+
+        <ol id="olSubscriptions">
+            @foreach (var subscription in Model.Subscriptions)
+            {
+                <li title="@subscription.Description" id="liSubscription">
+                    <a href="#">
+                        @subscription.Title
+                    </a>
+                    <div id="divSubscriptionUploadCount">(@subscription.UploadCount uploads)</div>
+                    <div id="divSubscriptionUploadCount">(@subscription.RecentUploadCount recent uploads)</div>
+                </li>
+            }
+        </ol>
+    </div>
+}
