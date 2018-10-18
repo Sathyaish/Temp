@@ -105,6 +105,8 @@ namespace VideoList
 
                 if (result.pageInfo.totalResults == 0) return null;
 
+                nextPageToken = result.nextPageToken;
+
                 foreach (var item in result?.items)
                     videos.Add((string)item.snippet.title);
 
