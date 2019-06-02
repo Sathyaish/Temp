@@ -1,1 +1,3 @@
 I am creating this file to see if I may intercept HTTPS traffic from the bash client to GitHub using Fiddler's root certificate.
+
+I restarted Fiddler after adding the certificate to test this. It wasn't intercepting before the restart. Now let me see if it does.
